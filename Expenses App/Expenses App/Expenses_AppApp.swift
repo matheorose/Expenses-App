@@ -11,7 +11,8 @@ import SwiftUI
 struct Expenses_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .environmentObject(ExpensesViewModel())
         }
     }
 }

@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Expenses: Identifiable {
     var id = UUID()
     var title: String
     var price: Double
-    var type: TypeDepense
+    var type: Category
     
     static var testData = [
         Expenses(title: "Apple", price: 120, type: .perso),
@@ -22,9 +23,23 @@ struct Expenses: Identifiable {
     ]
 }
 
-enum TypeDepense{
-    case perso
-    case vacation
-    case pro
+enum Category: String, CaseIterable{
+    case All = "All"
+    case perso = "Perso"
+    case vacation = "Vacation"
+    case pro = "High"
+    
+    var color:Color{
+        switch self{
+        case.perso:
+            return Color.pink
+        case.pro:
+            return Color.green
+        case.vacation:
+            return Color.orange
+        case.All:
+            return Color.black
+        }
+    }
 }
     

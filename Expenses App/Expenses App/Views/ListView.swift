@@ -9,10 +9,14 @@ import SwiftUI
 
 struct ListView: View {
     
+    @Environment(\.presentationMode) var presMode
+    
+    @State private  var type: Category = .perso
     var data: [Expenses]
     
     var body: some View {
         NavigationView{
+            
             List{
                 ForEach(data) { expenses in
                     RowView(expenses: expenses)

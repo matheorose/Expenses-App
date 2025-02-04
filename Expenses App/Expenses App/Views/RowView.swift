@@ -17,6 +17,15 @@ struct RowView: View {
             Spacer()
             
             Text(String(format: "%.2f  €", expenses.price))
+            
+            Text(expenses.type.rawValue)
+                .font(.footnote)
+                .padding(3)
+                .foregroundStyle(Color(.systemGray2))
+                .frame(width:62)
+                .overlay{
+                    Capsule().stroke(Color(.systemGray2), lineWidth: 0.75)
+                }
         }
         .font(.title2)
         .padding(.vertical, 10)
